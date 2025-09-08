@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 # -----------------------------
-# ⿡ Generate Ansible Inventory File
+# 1️⃣ Generate Ansible Inventory File
 # -----------------------------
 resource "local_file" "ansible_inventory" {
   content = templatefile(
@@ -19,7 +19,7 @@ resource "local_file" "ansible_inventory" {
 }
 
 # -----------------------------
-# ⿢ Create EC2 Ansible Controller
+# 2️⃣ Create EC2 Ansible Controller
 # -----------------------------
 resource "aws_instance" "ansible_controller" {
   ami                         = var.amiid
@@ -66,7 +66,7 @@ resource "aws_instance" "ansible_controller" {
 }
 
 # -----------------------------
-# ⿣ Create EC2 Ansible Worker Nodes
+# 3️⃣ Create EC2 Ansible Worker Nodes
 # -----------------------------
 resource "aws_instance" "ansible_nodes" {
   count                       = var.servercount
@@ -82,6 +82,6 @@ resource "aws_instance" "ansible_nodes" {
   EOF
 
   tags = {
-    Name = "ANSIBLE TARGET NODE"
-  }
+    Name = "ANSIBLE TARGET NODE"
+  }
 }
