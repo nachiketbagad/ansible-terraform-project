@@ -3,7 +3,7 @@ variable "amiid" {
 }
 
 variable "type" {
-  default = "t2.micro"
+  default = "t3.micro"
 }
 
 variable "pemfile" {
