@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 # -----------------------------
-# 1️⃣ Generate Ansible Inventory File
+# 1️⃣ Generate Ansible Inventory File 
 # -----------------------------
 resource "local_file" "ansible_inventory" {
   content = templatefile(
